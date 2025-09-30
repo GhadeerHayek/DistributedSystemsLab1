@@ -13,8 +13,11 @@ s.listen(1)
 # - Process data
 # - Send response back
 while True:
+    print('Waiting for connection...')
     conn, addr = s.accept()
     data = conn.recv(1024)
-    print(data)
+    print("client said: ", data)
     conn.send(b'Hello, World!')
     conn.close()
+
+print('Connection closed.')
