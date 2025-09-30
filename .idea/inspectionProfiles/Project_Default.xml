@@ -1,0 +1,33 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="jsonschema" />
+          <option value="xmltodict" />
+          <option value="checkout-sdk" />
+          <option value="sendgrid" />
+          <option value="pdfkit" />
+          <option value="htmlmin" />
+          <option value="pandas" />
+          <option value="pytz" />
+          <option value="decorator" />
+          <option value="numpy" />
+          <option value="opencv-python" />
+          <option value="Pillow" />
+          <option value="pydantic" />
+          <option value="qrcode" />
+          <option value="six" />
+          <option value="typing_extensions" />
+          <option value="uttlv" />
+          <option value="validators" />
+          <option value="deprecated" />
+          <option value="wkhtmltopdf" />
+          <option value="opencv-python-headless" />
+          <option value="pywebpush" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
