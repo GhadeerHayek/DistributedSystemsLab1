@@ -19,7 +19,8 @@ def get_user(id):
     # Returns a specific user
     # the id is key, so just get its corresponding value
     user = users.get(id)
-    return jsonify({'error': 'User not found'}), 404 if not user else jsonify(user.to_dict())
+    print("user:", user)
+    return (jsonify({'error': 'User not found'}), 404) if not user else jsonify(user.to_dict())
 
 
 @app.route('/api/users', methods=['POST'])
@@ -55,4 +56,4 @@ def delete_user(id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5050)
