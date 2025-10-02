@@ -1,0 +1,48 @@
+// step 1: the syntax line and the package line
+syntax = "proto3";
+
+package userservices;
+
+import "google/protobuf/empty.proto";
+
+// step 2: define the data
+// represents the user data, which is the kind of the message we'll be returning in the services
+message User{
+  // a user has an id, name, email
+  string id = 1;
+  string name = 2 ;
+  string email = 3 ;
+
+}
+
+// step 3: define the responses and requests
+
+// request message definitions
+message CreateUserRequest{
+  string name = 1;
+  string email = 2;
+
+}
+message UpdatedUserRequest{
+  string id = 1;
+
+}
+message DeleteUserRequest{
+  string id = 1;
+
+}
+message GetUserRequest{
+  string id = 1;
+}
+
+
+// step 4: define the actions
+// services definitions
+
+service UserService {
+  rpc createUser(CreateUserRequest) returns (User);
+  rpc updatedUser(UpdatedUserRequest) returns (User);
+  rpc deleteUser(DeleteUserRequest) returns (google.protobuf.Empty);
+  rpc getUser(GetUserRequest) returns (User);
+
+}
