@@ -3,8 +3,6 @@ syntax = "proto3";
 
 package userservices;
 
-import "google/protobuf/empty.proto";
-
 // step 2: define the data
 // represents the user data, which is the kind of the message we'll be returning in the services
 message User{
@@ -23,8 +21,10 @@ message CreateUserRequest{
   string email = 2;
 
 }
-message UpdatedUserRequest{
+message UpdateUserRequest{
   string id = 1;
+  string name = 2;
+  string email = 3;
 
 }
 message DeleteUserRequest{
@@ -35,14 +35,17 @@ message GetUserRequest{
   string id = 1;
 }
 
+message DeleteUserResponse {
+  string message = 1;
+}
 
 // step 4: define the actions
 // services definitions
 
 service UserService {
   rpc createUser(CreateUserRequest) returns (User);
-  rpc updatedUser(UpdatedUserRequest) returns (User);
-  rpc deleteUser(DeleteUserRequest) returns (google.protobuf.Empty);
+  rpc updateUser(UpdateUserRequest) returns (User);
+  rpc deleteUser(DeleteUserRequest) returns (DeleteUserResponse);
   rpc getUser(GetUserRequest) returns (User);
 
 }
