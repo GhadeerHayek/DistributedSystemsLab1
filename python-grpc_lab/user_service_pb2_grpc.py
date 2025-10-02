@@ -3,7 +3,6 @@
 import grpc
 import warnings
 
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 import user_service_pb2 as user__service__pb2
 
 GRPC_GENERATED_VERSION = '1.75.1'
@@ -43,15 +42,15 @@ class UserServiceStub(object):
                 request_serializer=user__service__pb2.CreateUserRequest.SerializeToString,
                 response_deserializer=user__service__pb2.User.FromString,
                 _registered_method=True)
-        self.updatedUser = channel.unary_unary(
-                '/userservices.UserService/updatedUser',
-                request_serializer=user__service__pb2.UpdatedUserRequest.SerializeToString,
+        self.updateUser = channel.unary_unary(
+                '/userservices.UserService/updateUser',
+                request_serializer=user__service__pb2.UpdateUserRequest.SerializeToString,
                 response_deserializer=user__service__pb2.User.FromString,
                 _registered_method=True)
         self.deleteUser = channel.unary_unary(
                 '/userservices.UserService/deleteUser',
                 request_serializer=user__service__pb2.DeleteUserRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                response_deserializer=user__service__pb2.DeleteUserResponse.FromString,
                 _registered_method=True)
         self.getUser = channel.unary_unary(
                 '/userservices.UserService/getUser',
@@ -72,7 +71,7 @@ class UserServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def updatedUser(self, request, context):
+    def updateUser(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -98,15 +97,15 @@ def add_UserServiceServicer_to_server(servicer, server):
                     request_deserializer=user__service__pb2.CreateUserRequest.FromString,
                     response_serializer=user__service__pb2.User.SerializeToString,
             ),
-            'updatedUser': grpc.unary_unary_rpc_method_handler(
-                    servicer.updatedUser,
-                    request_deserializer=user__service__pb2.UpdatedUserRequest.FromString,
+            'updateUser': grpc.unary_unary_rpc_method_handler(
+                    servicer.updateUser,
+                    request_deserializer=user__service__pb2.UpdateUserRequest.FromString,
                     response_serializer=user__service__pb2.User.SerializeToString,
             ),
             'deleteUser': grpc.unary_unary_rpc_method_handler(
                     servicer.deleteUser,
                     request_deserializer=user__service__pb2.DeleteUserRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                    response_serializer=user__service__pb2.DeleteUserResponse.SerializeToString,
             ),
             'getUser': grpc.unary_unary_rpc_method_handler(
                     servicer.getUser,
@@ -155,7 +154,7 @@ class UserService(object):
             _registered_method=True)
 
     @staticmethod
-    def updatedUser(request,
+    def updateUser(request,
             target,
             options=(),
             channel_credentials=None,
@@ -168,8 +167,8 @@ class UserService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/userservices.UserService/updatedUser',
-            user__service__pb2.UpdatedUserRequest.SerializeToString,
+            '/userservices.UserService/updateUser',
+            user__service__pb2.UpdateUserRequest.SerializeToString,
             user__service__pb2.User.FromString,
             options,
             channel_credentials,
@@ -197,7 +196,7 @@ class UserService(object):
             target,
             '/userservices.UserService/deleteUser',
             user__service__pb2.DeleteUserRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            user__service__pb2.DeleteUserResponse.FromString,
             options,
             channel_credentials,
             insecure,

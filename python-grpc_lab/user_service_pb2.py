@@ -22,26 +22,27 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12user_service.proto\x12\x0cuserservices\x1a\x1bgoogle/protobuf/empty.proto\"/\n\x04User\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"0\n\x11\x43reateUserRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\" \n\x12UpdatedUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x1f\n\x11\x44\x65leteUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x1c\n\x0eGetUserRequest\x12\n\n\x02id\x18\x01 \x01(\t2\x99\x02\n\x0bUserService\x12\x41\n\ncreateUser\x12\x1f.userservices.CreateUserRequest\x1a\x12.userservices.User\x12\x43\n\x0bupdatedUser\x12 .userservices.UpdatedUserRequest\x1a\x12.userservices.User\x12\x45\n\ndeleteUser\x12\x1f.userservices.DeleteUserRequest\x1a\x16.google.protobuf.Empty\x12;\n\x07getUser\x12\x1c.userservices.GetUserRequest\x1a\x12.userservices.Userb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12user_service.proto\x12\x0cuserservices\"/\n\x04User\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"0\n\x11\x43reateUserRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\"<\n\x11UpdateUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"\x1f\n\x11\x44\x65leteUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x1c\n\x0eGetUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"%\n\x12\x44\x65leteUserResponse\x12\x0f\n\x07message\x18\x01 \x01(\t2\xa1\x02\n\x0bUserService\x12\x41\n\ncreateUser\x12\x1f.userservices.CreateUserRequest\x1a\x12.userservices.User\x12\x41\n\nupdateUser\x12\x1f.userservices.UpdateUserRequest\x1a\x12.userservices.User\x12O\n\ndeleteUser\x12\x1f.userservices.DeleteUserRequest\x1a .userservices.DeleteUserResponse\x12;\n\x07getUser\x12\x1c.userservices.GetUserRequest\x1a\x12.userservices.Userb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'user_service_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_USER']._serialized_start=65
-  _globals['_USER']._serialized_end=112
-  _globals['_CREATEUSERREQUEST']._serialized_start=114
-  _globals['_CREATEUSERREQUEST']._serialized_end=162
-  _globals['_UPDATEDUSERREQUEST']._serialized_start=164
-  _globals['_UPDATEDUSERREQUEST']._serialized_end=196
-  _globals['_DELETEUSERREQUEST']._serialized_start=198
-  _globals['_DELETEUSERREQUEST']._serialized_end=229
-  _globals['_GETUSERREQUEST']._serialized_start=231
-  _globals['_GETUSERREQUEST']._serialized_end=259
-  _globals['_USERSERVICE']._serialized_start=262
-  _globals['_USERSERVICE']._serialized_end=543
+  _globals['_USER']._serialized_start=36
+  _globals['_USER']._serialized_end=83
+  _globals['_CREATEUSERREQUEST']._serialized_start=85
+  _globals['_CREATEUSERREQUEST']._serialized_end=133
+  _globals['_UPDATEUSERREQUEST']._serialized_start=135
+  _globals['_UPDATEUSERREQUEST']._serialized_end=195
+  _globals['_DELETEUSERREQUEST']._serialized_start=197
+  _globals['_DELETEUSERREQUEST']._serialized_end=228
+  _globals['_GETUSERREQUEST']._serialized_start=230
+  _globals['_GETUSERREQUEST']._serialized_end=258
+  _globals['_DELETEUSERRESPONSE']._serialized_start=260
+  _globals['_DELETEUSERRESPONSE']._serialized_end=297
+  _globals['_USERSERVICE']._serialized_start=300
+  _globals['_USERSERVICE']._serialized_end=589
 # @@protoc_insertion_point(module_scope)
