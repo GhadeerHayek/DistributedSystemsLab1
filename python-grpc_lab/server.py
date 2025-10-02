@@ -25,6 +25,7 @@ class UserService(user_service_pb2_grpc.UserServiceServicer):
             return user_service_pb2.User(id=user_id, name="", email="")
 
     def updateUser(self, request, context):
+        print("called the implementation of update user")
         # implement UpdateUser
         # get the id, name, email
         user_id = request.id
@@ -44,6 +45,7 @@ class UserService(user_service_pb2_grpc.UserServiceServicer):
             return user_service_pb2.User(id=user_id, name=self.users[user_id].name, email=self.users[user_id].email)
 
     def deleteUser(self, request, context):
+        print("called the implementation of delete user")
         # the request will contain the id of the user to delete
         id = request.id
         if id not in self.users:
@@ -55,6 +57,7 @@ class UserService(user_service_pb2_grpc.UserServiceServicer):
             return user_service_pb2.DeleteUserResponse(message=f"User with ID '{id}' deleted.")
 
     def createUser(self, request, context):
+        print("called the implementation of create user")
         # the request will contain the id, name, email of the user to create
         name = request.name
         email = request.email
@@ -80,4 +83,5 @@ def serve():
 if __name__ == '__main__':
     print("Starting server...")
     serve()
+    print("The final in-memory user list:", UserService.users)
     print("Server stopped.")
