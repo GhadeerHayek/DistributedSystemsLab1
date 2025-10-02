@@ -1,6 +1,6 @@
 import grpc
-from generated import user_service_pb2
-from generated import user_service_pb2_grpc
+import user_service_pb2_grpc
+import user_service_pb2
 
 # connection on the same port of the server
 channel = grpc.insecure_channel('localhost:50051')

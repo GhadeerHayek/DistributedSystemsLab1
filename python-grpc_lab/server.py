@@ -1,7 +1,7 @@
 import grpc
 from concurrent import futures
-from generated import user_service_pb2
-from generated import user_service_pb2_grpc
+import user_service_pb2
+import user_service_pb2_grpc
 
 
 class UserService(user_service_pb2_grpc.UserServiceServicer):
