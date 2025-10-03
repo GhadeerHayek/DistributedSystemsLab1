@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  python-socket:
+    build: ./python-socket-lab
+    ports:
+      - "8080:8080"
+  python-rest:
+    build: ./python-rest-lab
+    ports:
+      - "5050:5050"
+  python-grpc:
+    build: ./python-grpc-lab
+    ports:
+      - "50051:50051"
