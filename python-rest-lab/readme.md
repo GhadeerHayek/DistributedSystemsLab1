@@ -13,7 +13,7 @@ It exposes standard API endpoints (GET, POST, PUT, DELETE) to interact with a co
 Quick testing without docker. 
 
 
-1.  Navigate to this directory (`/python-socket-lab`).
+1.  Navigate to this directory (`/python-rest-lab`).
 
 2. install the required dependices 
 
